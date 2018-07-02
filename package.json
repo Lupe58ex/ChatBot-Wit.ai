@@ -1,7 +1,6 @@
 {
   "name": "messengerbotwitai",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,5 +12,15 @@
     "express": "^4.13.4",
     "node-wit": "^3.3.2",
     "request": "^2.71.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lupe58ex/ChatBot-Wit.ai.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Lupe58ex/ChatBot-Wit.ai/issues"
+  },
+  "homepage": "https://github.com/Lupe58ex/ChatBot-Wit.ai#readme",
+  "description": ""
 }
