@@ -28,15 +28,15 @@ app.get('/', function (req, res) {
 // for facebook to verify
 app.get('/webhooks', function (req, res) {
   if (req.query['hub.verify_token'] === Config.FB_VERIFY_TOKEN) {
-    res.send(req.query['hub.challenge'])
+    res.status(200).send(req.query['hub.challenge'])
   }
-  res.send('Error, wrong token')
+  res.sendStatus(403).send('Error, wrong token')
 })
 
 // to send messages to facebook
 app.post('/webhooks', function (req, res) {
   var entry = FB.getMessageEntry(req.body)
-  // IS THE ENTRY A VALID MESSAGE?
+  /* IS THE ENTRY A VALID MESSAGE?
   if (entry && entry.message) {
     if (entry.message.attachments) {
       // NOT SMART ENOUGH FOR ATTACHMENTS YET
@@ -47,7 +47,19 @@ app.post('/webhooks', function (req, res) {
         FB.newMessage(sender, reply)
       })
     }
-  }
+  }*/
+  if (req.body.object == "page") {
+    // Si existe multiples entradas entraas
+    req.body.entry.forEach(function(entry) {
+        // Iterara todos lo eventos capturados
+        entry.messaging.forEach(function(event) {
+            if (event.message) {
+                process_event(event);
+            }
+        });
+    });
+    res.sendStatus(200);
+}
 
   res.sendStatus(200)
 })
