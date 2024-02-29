@@ -5,7 +5,7 @@ var wit = require('./services/wit').getWit()
 
 // LETS SAVE USER SESSIONS
 var sessions = {}
-
+// this is one comment in one file
 var findOrCreateSession = function (fbid) {
   var sessionId
 
