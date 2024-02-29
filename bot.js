@@ -5,7 +5,7 @@ var wit = require('./services/wit').getWit()
 
 // LETS SAVE USER SESSIONS
 var sessions = {}
-
+// first change 1st commit
 var findOrCreateSession = function (fbid) {
   var sessionId
 

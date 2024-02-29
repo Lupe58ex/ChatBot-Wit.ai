@@ -4,7 +4,7 @@ const WIT_TOKEN = process.env.WIT_TOKEN || 'F4XVATIKBWC3Q45JNV56X4PSWHZP2PLT'
 if (!WIT_TOKEN) {
   throw new Error('Missing')
 }
-
+// second change 1st commit
 
 var FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN || 'EAAPCnjgJAvkBACZBidHZBZACz35igIGqULElTntgiAgVzIxVxAX7Y38Eb1N2FD2bKGZBT8OlL6a6F0qEJsWhYdWeZCdsbaZCTd13HT8QEwNPRa3owTNuAeqLG5HZAAzkOC1jiGhR90Nlb8mk3cylI0FsuZBf6lWWzMB5ZA3cXXVzgCQZDZD';
 if (!FB_PAGE_TOKEN) {
